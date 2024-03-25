@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
 	},
 	"infoEmail": {
 		padding: 10,
+		flex: 1,
 	},
 	"emailSender": {
 		fontSize: 18,
