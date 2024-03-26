@@ -3,7 +3,8 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { SimpleLineIcons } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
+
 
 import { RootStackParamList } from '../navigation';
 import { FlatList } from 'react-native-gesture-handler';
@@ -85,6 +86,12 @@ export default function Overview() {
               <Text style={styles.emailSender}>{item.sender}</Text>
               <Text style={styles.emailSubject}>{item.subject}</Text>
               <Text style={styles.emailBody}>{item.preview}</Text>
+              {item.attachments ? (
+                <View style={styles.emailAttachment}>
+                  <Entypo name="attachment" size={24} color="black" />
+                  <Text style={styles.emailAttachmentText}>Anexo</Text>
+                </View>
+              ) : null}
             </View>
             <Text style={styles.emailTime}>{item.time}</Text>
           </View>
